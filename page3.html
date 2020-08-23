@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- This is based on DillingerLee's great template here:
+https://github.com/Team-Code/KA_Offline -->
+
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="description" content="This is an awesome website">
+   <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+   <title>LYRYX Public Transit Booking Services</title>
+</head>
+<body style= "background-color: aliceblue">
+  <br/>
+  <h1 style="color: teal; text-align:center; font-family: Arial, sans-serif; border= 1px solid black">LYRYX Public Transit Booking Services</h1>
+    <p align="center">
+	<!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas>
+    </p>
+    <br/>
+ </body>
+
+ <!-- Run all the JavaScript stuff -->
+ <!-- Include the processing.js library -->
+ <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(400, 400);
+        frameRate(30);
+
+        // ProgramCodeGoesHere
+        fill(0, 50, 199);
+textSize(14);
+text("Figure 1: Illustration of two individuals booking seats",10,10,380,20);
+text("Figure 2: Illustration of a family booking seats", 10,30,380,20);
+//add "booking certain seats are allowed to allow maximum seating, for example in figure one, individuals should start filling the edges/ends of the bus first"
+//add "social distancing measures are accounted as at least 2 seats in between for about 2 meters, software is easily adabtabile as to accomodate changes in the regulations"
+//blue seating means accebility seats
+text("BUS LAYOUT in FULL CONFIGURATION", 40,61,380,20);
+var tileWidth = 20;
+var tileGap = tileWidth/10;
+var leftsideOffset1 = 324 + tileWidth/2;
+var leftsideOffset2 = 302 + tileWidth/2;
+var leftsideOffset3 = 230 + tileWidth/2;
+
+var tileNumber = 0;
+fill(161, 242, 255);
+while(tileNumber < 8){
+    rect(tileNumber * (tileWidth + tileGap) + leftsideOffset1, 96, tileWidth, 30);
+    tileNumber++;
+}
+
+tileNumber= 0;
+while(tileNumber < 8){
+    rect(tileNumber * (tileWidth + tileGap) + leftsideOffset2, 177, tileWidth, 30);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 3){
+    rect(tileNumber * (tileWidth + tileGap) + leftsideOffset3, 177, tileWidth, 30);
+    tileNumber++;
+}
+
+fill(245, 240, 245);
+tileNumber =0;
+while(tileNumber < 4){
+    rect(192 + (tileWidth + 16)*tileNumber, 97, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 5){
+    rect(0, 91 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(40, 89 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(40, 168 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(40, 168 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+
+while(tileNumber < 2){
+    rect(105, 168 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(105, 89 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(139, 89 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+//rect(x,y,width, height)
+rect(307, 166, 2 ,44); //line
+rect(234, 166, 2 ,44); //line
+rect(172, 89, 2 ,44); //line
+rect(79, 167 ,tileWidth, 30);
+rect(79, 104 ,tileWidth, 30);
+
+line(0,80,400,80);
+line(0,221,400,221);
+
+//PART 2 - FAMILY BOOKING
+var a = 170;
+var tileWidth = 20;
+var tileGap = tileWidth/10;
+var leftsideOffset1 = 324 + tileWidth/2;
+var leftsideOffset2 = 302 + tileWidth/2;
+var leftsideOffset3 = 230 + tileWidth/2;
+
+var tileNumber = 0;
+fill(161, 242, 255);
+while(tileNumber < 8){
+    rect(tileNumber * (tileWidth + tileGap) + leftsideOffset1, 96+a, tileWidth, 30);
+    tileNumber++;
+}
+
+tileNumber= 0;
+while(tileNumber < 8){
+    rect(tileNumber * (tileWidth + tileGap) + leftsideOffset2, 177+a, tileWidth, 30);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 3){
+    rect(tileNumber * (tileWidth + tileGap) + leftsideOffset3, 177+a, tileWidth, 30);
+    tileNumber++;
+}
+
+fill(245, 240, 245);
+tileNumber =0;
+while(tileNumber < 4){
+    rect(192 + (tileWidth + 16)*tileNumber, 97+a, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 5){
+    rect(0, 91 + tileNumber*25 +a, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(40, 89 + tileNumber*25 + a, 30, tileWidth);
+    tileNumber++;
+}
+
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(40, 168 + tileNumber*25 + a, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(40, 168 + tileNumber*25, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+
+while(tileNumber < 2){
+    rect(105, 168 + tileNumber*25 +a, 30, tileWidth);
+    tileNumber++;
+}
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(105, 89 + tileNumber*25 +a, 30, tileWidth);
+    tileNumber++;
+}
+
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(139, 89 + tileNumber*25 +a, 30, tileWidth);
+    tileNumber++;
+}
+
+//rect(x,y,width, height)
+rect(307, 166+a, 2 ,44); //line
+rect(234, 166+a, 2 ,44); //line
+rect(172, 89+a, 2 ,44); //line
+rect(79, 167+a ,tileWidth, 30);
+rect(79, 104+a ,tileWidth, 30);
+
+
+line(0,80+a,400,80+a);
+line(0,221+a,400,221+a);
+
+mouseClicked = function() {
+    if (mouseX >= 0 && mouseX <= 1000 && mouseY >= 0 && mouseY <= 1000) {
+        tileNumber= 1;
+        fill(255, 0, 0);
+        while(tileNumber < 4){
+        rect(tileNumber * (tileWidth + tileGap) + leftsideOffset2, 177, tileWidth, 30);
+        tileNumber++;
+        }
+
+        fill(247, 0, 0);
+        ellipse(mouseX, mouseY , 0, 1000);
+    }
+
+    if (mouseX >= 0 && mouseX <= 1000 && mouseY >= 0 && mouseY <= 1000) {
+        tileNumber= 1;
+        fill(255, 0, 0);
+        while(tileNumber < 4){
+        rect(tileNumber * (tileWidth + tileGap) + leftsideOffset2, 177, tileWidth, 30);
+        tileNumber++;
+
+    }
+        fill(255, 0, 0);
+        tileNumber = 0;
+        while(tileNumber < 2){
+            rect(40, 89 + tileNumber*25, 30, tileWidth);
+            tileNumber++;
+        }
+        tileNumber = 0;
+        while(tileNumber < 3){
+            rect(0, 91 + tileNumber*25, 30, tileWidth);
+            tileNumber++;
+        }
+        fill(247, 0, 0);
+        ellipse(mouseX, mouseY , 15, 15);
+    }
+
+
+    //part 2
+    fill(0, 255, 30);
+ellipse(mouseX, mouseY , 15, 15);
+    if (mouseX >= 130 && mouseX <= 250 && mouseY >= 200 && mouseY <= 270) {
+        fill(247, 0, 0);
+    tileNumber = 0;
+while(tileNumber < 2){
+    rect(105, 89 + tileNumber*25 +a, 30, tileWidth);
+    tileNumber++;
+}
+
+
+tileNumber = 0;
+while(tileNumber < 2){
+    rect(139, 89 + tileNumber*25+a, 30, tileWidth);
+    tileNumber++;
+}
+rect(79, 104+a ,tileWidth, 30);
+}
+};
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas");
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc);
+ </script>
+
+</html>
